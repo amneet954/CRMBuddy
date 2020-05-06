@@ -1,0 +1,16 @@
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+.innerCenter {
+  text-align: center;
+  /* margin: auto;
+  width: 50%;
+  padding: 10px; */
+}
+
+.label {
+  padding-right: 1%;
+}
