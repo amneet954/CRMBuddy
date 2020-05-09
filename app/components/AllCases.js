@@ -8,7 +8,6 @@ class AllCases extends Component {
     super();
     this.state = {
       email: "",
-      display: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,33 +20,15 @@ class AllCases extends Component {
   }
   handleSubmit() {
     event.preventDefault();
-    this.setState({
-      display: true,
-    });
     this.props.dispatchCases(this.state.email);
   }
   render() {
     const caseList = this.props.caseList.caseList;
-    const { display } = this.state;
     console.log(caseList);
     if (!caseList) {
       return (
         <div>
           <h1>Hi from AllCase!</h1>
-        </div>
-      );
-    } else if (!caseList && display) {
-      return (
-        <div>
-          {caseList.map((singleCase) => {
-            return (
-              <div key={singleCase.caseId}>
-                <h1>{singleCase.name}</h1>
-                <h2>{singleCase.company}</h2>
-                <h2>{singleCase.email}</h2>
-              </div>
-            );
-          })}
         </div>
       );
     } else {
