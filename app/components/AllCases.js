@@ -12,19 +12,20 @@ class AllCases extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {}
+
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
   }
+
   handleSubmit() {
     event.preventDefault();
     this.props.dispatchCases(this.state.email);
   }
+
   render() {
     const caseList = this.props.caseList.caseList;
-    console.log(caseList);
     if (!caseList) {
       return (
         <div>
