@@ -43,21 +43,19 @@ nav {
   font-size: 150%;
   color: white;
 }
-button {
+.headNavButton {
   margin-right: 10px;
   border-radius: 5px 5px;
   width: 10%;
   border: rgb(37, 38, 150);
   text-align: center;
 }
-.button {
+.navButton {
   background-color: rgb(37, 38, 150);
 }
-.button {
+.navButton {
   transition-duration: 0.4s;
 }
-.button:hover {
-  /* background-color: whitesmoke;
-  color: green; */
+.navButton:hover {
   background-color: royalblue;
 }
