@@ -13,7 +13,7 @@ class HomePage extends Component {
   render() {
     if (!this.props.domainlist.domain) {
       return (
-        <div>
+        <div className="card">
           <h1>
             You must enter a valid company name and email address to view cases.
           </h1>
@@ -21,7 +21,7 @@ class HomePage extends Component {
       );
     } else {
       return (
-        <div>
+        <div className="card">
           <h2>
             Salesforce Instance:{" "}
             {this.props.domainlist.domain.salesforceInstance}

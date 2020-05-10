@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { gettingCases } from "../redux/reducers";
 import { connect } from "react-redux";
-import Card from "react-bootstrap/Card";
 // import { Link } from "react-router-dom";
 
 class AllCases extends Component {

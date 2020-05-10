@@ -6,8 +6,14 @@
 * {
   box-sizing: border-box;
   font-family: arial, sans-serif;
+  text-decoration: none;
 }
-
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 body {
   background: linear-gradient(#ffffff, #c0c0c0);
   height: 100vh;
@@ -25,16 +31,33 @@ body {
 }
 nav {
   align-items: center;
-  background-color: #333333;
+  background-color: royalblue;
   color: #c0c0c0;
   display: flex;
   height: 80px;
-  padding: 10px;
+  padding: 2% 3%;
+  overflow: hidden;
 }
-
-main {
-  align-items: center;
+.navText {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
+  font-size: 150%;
+  color: white;
+}
+button {
+  padding: 2% 5%;
+  margin-right: 10px;
+  border-radius: 5px 5px;
+  width: 10%;
+  border: royalblue;
+}
+.button {
+  background-color: royalblue;
+}
+.button {
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: rgb(41, 42, 139);
+  color: white;
 }

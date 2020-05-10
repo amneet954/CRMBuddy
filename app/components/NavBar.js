@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <button type="button" className="btn btn-outline-dark">
-        <Link to="/" className="text-white">
+    <nav className="nav">
+      <button className="button">
+        <Link to="/" className="navText">
           Home Page
         </Link>
       </button>
-      <button type="button" className="btn btn-outline-dark">
-        <Link to="/cases" className="text-white">
-          All Cases
+      <button className="button">
+        <Link to="/cases" className="navText">
+          Find Cases
         </Link>
       </button>
     </nav>
