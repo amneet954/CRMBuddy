@@ -8,9 +8,16 @@ const NavBar = () => {
           <h3>Home Page</h3>
         </Link>
       </button>
+
       <button className="navButton headNavButton">
         <Link to="/cases" className="navText">
           <h3>Find Cases</h3>
+        </Link>
+      </button>
+
+      <button className="navButton headNavButton">
+        <Link className="navText">
+          <h3>Create a Case</h3>
         </Link>
       </button>
     </nav>

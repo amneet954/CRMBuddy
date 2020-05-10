@@ -38,40 +38,52 @@ class AllCases extends Component {
           {caseList.length ? (
             ""
           ) : (
-            <div className="card">
-              <h1>Please enter an email address</h1>
+            <div className="cardContainer">
+              <div className="card">
+                <h1>Please enter an email address</h1>
+              </div>
             </div>
           )}
 
           <form onSubmit={this.handleSubmit}>
-            <div className="card">
-              <h2>
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="text"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  required
-                />
-                <input type="submit" />
-              </h2>
+            <div className="cardContainer">
+              <div className="card">
+                <h2>
+                  <label htmlFor="email" className="caseName">
+                    Email:{" "}
+                  </label>
+                  <input
+                    type="text"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    required
+                  />
+                  <input type="submit" />
+                </h2>
+              </div>
             </div>
           </form>
 
           {caseList.length ? (
             caseList.map((singleCase) => {
               return (
-                <div key={singleCase.caseId} className="card">
-                  <h1>{singleCase.name}</h1>
-                  <h2>{singleCase.company}</h2>
-                  <h2>{singleCase.email}</h2>
+                <div key={"case"} className="gridContainer">
+                  <div className="caseCard">
+                    <span className="caseName">Name: {singleCase.name}</span>
+                    <span className="caseCompany">
+                      Company: {singleCase.company}
+                    </span>
+                    <span className="caseEmail">Email:{singleCase.email}</span>
+                  </div>
                 </div>
               );
             })
           ) : (
-            <div className="card">
-              <h1>no list yet</h1>
+            <div className="cardContainer">
+              <div className="card">
+                <h1>no list yet</h1>
+              </div>
             </div>
           )}
         </div>

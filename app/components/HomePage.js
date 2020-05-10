@@ -13,19 +13,24 @@ class HomePage extends Component {
   render() {
     if (!this.props.domainlist.domain) {
       return (
-        <div className="card">
-          <h1>
-            You must enter a valid company name and email address to view cases.
-          </h1>
+        <div className="cardContainer">
+          <div className="card">
+            <h1>
+              You must enter a valid company name and email address to view
+              cases.
+            </h1>
+          </div>
         </div>
       );
     } else {
       return (
-        <div className="card">
-          <h2>
-            Salesforce Instance:{" "}
-            {this.props.domainlist.domain.salesforceInstance}
-          </h2>
+        <div className="cardContainer">
+          <div className="card">
+            <h2>
+              Salesforce Instance:{" "}
+              {this.props.domainlist.domain.salesforceInstance}
+            </h2>
+          </div>
         </div>
       );
     }
