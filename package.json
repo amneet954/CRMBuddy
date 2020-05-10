@@ -18,10 +18,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.4.1",
     "chalk": "^2.4.1",
     "express": "^4.14.0",
     "jsforce": "^1.9.3",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-redux": "^5.1.2",
     "react-router-dom": "^5.1.2",

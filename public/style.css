@@ -15,7 +15,14 @@ body {
   margin: 0;
   width: 100vw;
 }
-
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 5px 5px;
+}
 nav {
   align-items: center;
   background-color: #333333;

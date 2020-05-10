@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { gettingCases } from "../redux/reducers";
 import { connect } from "react-redux";
+import Card from "react-bootstrap/Card";
 // import { Link } from "react-router-dom";
 
 class AllCases extends Component {
@@ -35,24 +36,34 @@ class AllCases extends Component {
     } else {
       return (
         <div>
-          {caseList.length ? "" : <h1>Please enter an email address</h1>}
-          <form onSubmit={this.handleSubmit} className="text-center">
-            <label htmlFor="email">
-              <h2>Email: </h2>
-            </label>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-            />
-            <input type="submit" className="btn btn-primary btn-sm" />
+          {caseList.length ? (
+            ""
+          ) : (
+            <div className="card">
+              <h1>Please enter an email address</h1>
+            </div>
+          )}
+
+          <form onSubmit={this.handleSubmit}>
+            <div className="card">
+              <h2>
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  required
+                />
+                <input type="submit" />
+              </h2>
+            </div>
           </form>
+
           {caseList.length ? (
             caseList.map((singleCase) => {
               return (
-                <div key={singleCase.caseId}>
+                <div key={singleCase.caseId} className="card">
                   <h1>{singleCase.name}</h1>
                   <h2>{singleCase.company}</h2>
                   <h2>{singleCase.email}</h2>
@@ -60,7 +71,9 @@ class AllCases extends Component {
               );
             })
           ) : (
-            <h1>no list yet</h1>
+            <div className="card">
+              <h1>no list yet</h1>
+            </div>
           )}
         </div>
       );
