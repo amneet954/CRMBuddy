@@ -31,7 +31,7 @@ body {
 }
 nav {
   align-items: center;
-  background-color: royalblue;
+  background-color: rgb(37, 38, 150);
   color: #c0c0c0;
   display: flex;
   height: 80px;
@@ -39,25 +39,25 @@ nav {
   overflow: hidden;
 }
 .navText {
-  display: flex;
   text-align: center;
   font-size: 150%;
   color: white;
 }
 button {
-  padding: 2% 5%;
   margin-right: 10px;
   border-radius: 5px 5px;
   width: 10%;
-  border: royalblue;
+  border: rgb(37, 38, 150);
+  text-align: center;
 }
 .button {
-  background-color: royalblue;
+  background-color: rgb(37, 38, 150);
 }
 .button {
   transition-duration: 0.4s;
 }
 .button:hover {
-  background-color: rgb(41, 42, 139);
-  color: white;
+  /* background-color: whitesmoke;
+  color: green; */
+  background-color: royalblue;
 }

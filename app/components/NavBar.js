@@ -5,12 +5,12 @@ const NavBar = () => {
     <nav className="nav">
       <button className="button">
         <Link to="/" className="navText">
-          Home Page
+          <h3>Home Page</h3>
         </Link>
       </button>
       <button className="button">
         <Link to="/cases" className="navText">
-          Find Cases
+          <h3>Find Cases</h3>
         </Link>
       </button>
     </nav>
