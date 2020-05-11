@@ -22,6 +22,9 @@ class AllCases extends Component {
   handleSubmit() {
     event.preventDefault();
     this.props.dispatchCases(this.state.email);
+    this.setState({
+      email: "",
+    });
   }
 
   render() {
