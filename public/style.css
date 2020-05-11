@@ -59,6 +59,7 @@ nav {
 .navButton:hover {
   /* background-color: rgb(144, 144, 148); */
   background-color: rgb(26, 70, 214);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .gridContainer {
   justify-content: start;
