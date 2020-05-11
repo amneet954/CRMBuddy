@@ -48,19 +48,19 @@ class AllCases extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="cardContainer">
               <div className="card">
-                <h2>
-                  <label htmlFor="email" className="caseName">
-                    Email:{" "}
-                  </label>
-                  <input
-                    type="text"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                    required
-                  />
-                  <input type="submit" />
-                </h2>
+                <label htmlFor="email"></label>
+                <input
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                  required
+                  className="emailField"
+                  placeholder="Please enter your email address here"
+                />
+                <button type="submit" className="submitButton">
+                  Go!
+                </button>
               </div>
             </div>
           </form>
@@ -86,7 +86,7 @@ class AllCases extends Component {
           ) : (
             <div className="cardContainer">
               <div className="card">
-                <h1>no list yet</h1>
+                <h1>No List Yet</h1>
               </div>
             </div>
           )}
