@@ -70,11 +70,15 @@ class AllCases extends Component {
               return (
                 <div key={"case"} className="gridContainer">
                   <div className="caseCard">
-                    <span className="caseName">Name: {singleCase.name}</span>
-                    <span className="caseCompany">
+                    <span className="caseName miniCard">
+                      Name: {singleCase.name}
+                    </span>
+                    <span className="caseCompany miniCard">
                       Company: {singleCase.company}
                     </span>
-                    <span className="caseEmail">Email:{singleCase.email}</span>
+                    <span className="caseEmail miniCard">
+                      Email:{singleCase.email}
+                    </span>
                   </div>
                 </div>
               );
