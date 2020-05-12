@@ -74,14 +74,19 @@ class AllCases extends Component {
                 <div key={"case"} className="gridContainer">
                   <div className="caseCard">
                     <span className="caseName miniCard">
-                      Name: {singleCase.name}
+                      <strong>Name: </strong>
+                      {singleCase.name}
                     </span>
                     <span className="caseCompany miniCard">
-                      Company: {singleCase.company}
+                      <strong>Company: </strong>
+                      {singleCase.company}
                     </span>
                     <span className="caseEmail miniCard">
-                      Email:{singleCase.email}
+                      <strong>Email: </strong>
+                      {singleCase.email}
                     </span>
+                    <button className="editCase">Edit Case</button>
+                    <button className="deleteCase">Delete Case</button>
                   </div>
                 </div>
               );
