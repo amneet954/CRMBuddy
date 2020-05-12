@@ -123,8 +123,8 @@ nav {
 }
 .viewCase {
   margin-left: 2%;
-  background-color: rgb(57, 60, 209);
-  border-color: rgb(57, 60, 209);
+  background-color: rgb(43, 46, 223);
+  border-color: rgb(43, 46, 223);
   border-radius: 28px;
   display: inline-block;
   cursor: pointer;
@@ -137,8 +137,8 @@ nav {
   outline: none;
 }
 .viewCase:hover {
-  background-color: rgb(43, 46, 223);
-  border-color: rgb(43, 46, 223);
+  background-color: rgb(57, 60, 209);
+  border-color: rgb(57, 60, 209);
   outline: none;
 }
 .deleteCase {
