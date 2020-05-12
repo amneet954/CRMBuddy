@@ -85,7 +85,7 @@ class AllCases extends Component {
                       <strong>Email: </strong>
                       {singleCase.email}
                     </span>
-                    <button className="editCase">Edit Case</button>
+                    <button className="viewCase">View Case</button>
                     <button className="deleteCase">Delete Case</button>
                   </div>
                 </div>
