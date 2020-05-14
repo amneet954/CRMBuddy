@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { makingCase } from "../redux/reducers";
 import { connect } from "react-redux";
 class NewCaseForm extends Component {
@@ -22,14 +21,16 @@ class NewCaseForm extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await this.props.dispatchCreation(this.state);
-    console.log("mindfreak");
+    console.log(this.props.success.newCase);
     this.setState({
       name: "",
       email: "",
       subject: "",
       company: "",
     });
+    if (this.props.success.newCase === "Success")
+      alert("Case has been sucessfully created");
+    else alert("Whoops, something went wrong, please try again later.");
   }
   render() {
     return (
@@ -92,9 +93,11 @@ class NewCaseForm extends Component {
   }
 }
 
-// const mapState = () => ({});
+const mapState = (state) => ({
+  success: state,
+});
 const mapDispatch = (dispatch) => ({
   dispatchCreation: (newCase) => dispatch(makingCase(newCase)),
 });
 
-export default connect(null, mapDispatch)(NewCaseForm);
+export default connect(mapState, mapDispatch)(NewCaseForm);
