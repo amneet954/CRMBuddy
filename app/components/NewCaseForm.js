@@ -21,14 +21,14 @@ class NewCaseForm extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    console.log(this.props.success.newCase);
+    await this.props.dispatchCreation(this.state);
     this.setState({
       name: "",
       email: "",
       subject: "",
       company: "",
     });
-    if (this.props.success.newCase === "Success")
+    if (this.props.success.newCase === true)
       alert("Case has been sucessfully created");
     else alert("Whoops, something went wrong, please try again later.");
   }

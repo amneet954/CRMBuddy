@@ -99,10 +99,11 @@ router.post("/caseForm", async (req, res, next) => {
           SuppliedEmail: email,
           Subject: subject,
           SuppliedCompany: company,
+          Origin: "Web",
         },
         (err, ret) => {
           if (err) res.json(err);
-          else res.json("Success");
+          else res.json(ret.success);
         }
       );
     });
