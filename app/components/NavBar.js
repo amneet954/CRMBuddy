@@ -16,7 +16,7 @@ const NavBar = () => {
       </button>
 
       <button className="navButton headNavButton">
-        <Link className="navText">
+        <Link to="/caseForm" className="navText">
           <h3>Create a Case</h3>
         </Link>
       </button>
