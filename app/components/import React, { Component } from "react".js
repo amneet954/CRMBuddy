@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { makingCase } from "../redux/reducers";
-import { connect } from "react-redux";
 class NewCaseForm extends Component {
   constructor() {
     super();
@@ -22,8 +20,7 @@ class NewCaseForm extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    await this.props.dispatchCreation(this.state);
-    console.log("mindfreak");
+    await axios.post("/api/cases/caseForm", this.state);
     this.setState({
       name: "",
       email: "",
@@ -92,9 +89,4 @@ class NewCaseForm extends Component {
   }
 }
 
-// const mapState = () => ({});
-const mapDispatch = (dispatch) => ({
-  dispatchCreation: (newCase) => dispatch(makingCase(newCase)),
-});
-
-export default connect(null, mapDispatch)(NewCaseForm);
+export default NewCaseForm;

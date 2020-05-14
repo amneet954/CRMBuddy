@@ -90,14 +90,14 @@ router.get("/:email/:company", async (req, res, next) => {
 
 router.post("/caseForm", async (req, res, next) => {
   try {
-    let { name, email, company, phone } = req.body;
+    let { name, email, company, subject } = req.body;
     connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       connection.sobject("Case").create(
         {
           SuppliedName: name,
           SuppliedEmail: email,
-          Subject: phone,
+          Subject: subject,
           SuppliedCompany: company,
         },
         (err, ret) => {
