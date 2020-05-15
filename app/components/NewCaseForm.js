@@ -40,47 +40,57 @@ class NewCaseForm extends Component {
         </div>
         <form onSubmit={this.handleSubmit}>
           <div className="card">
-            <label htmlFor="name"></label>
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              required
-              className="emailField"
-              placeholder="Please enter contact name here"
-            />
-            <label htmlFor="email"></label>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-              className="emailField"
-              placeholder="Please enter contact email address here"
-            />
-            <label htmlFor="company"></label>
-            <input
-              type="text"
-              name="company"
-              value={this.state.company}
-              onChange={this.handleChange}
-              required
-              className="emailField"
-              placeholder="Please enter company name here"
-            />
-            <label htmlFor="subject"></label>
-            <input
-              type="text"
-              name="subject"
-              value={this.state.subject}
-              onChange={this.handleChange}
-              required
-              className="emailField"
-              placeholder="What should be the case subject line"
-            />
+            <span className="caseField">
+              <label htmlFor="name"></label>
+              <input
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.handleChange}
+                required
+                className="emailField"
+                placeholder="Please enter contact name here"
+              />
+            </span>
+            <span className="caseField">
+              <label htmlFor="email"></label>
+              <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                required
+                className="emailField"
+                placeholder="Please enter contact email address here"
+              />
+            </span>
+            <span className="caseField">
+              <label htmlFor="company"></label>
+              <input
+                type="text"
+                name="company"
+                value={this.state.company}
+                onChange={this.handleChange}
+                required
+                className="emailField"
+                placeholder="Please enter company name here"
+              />
+            </span>
+            <span className="caseField">
+              <label htmlFor="subject"></label>
+              <input
+                type="text"
+                name="subject"
+                value={this.state.subject}
+                onChange={this.handleChange}
+                required
+                className="emailField"
+                placeholder="What should be the case subject line"
+              />
+            </span>
+            <br></br>
             <div>
+              <br></br>
               <button type="submit" className="submitButton">
                 Go!
               </button>
