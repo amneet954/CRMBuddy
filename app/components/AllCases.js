@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { gettingCases } from "../redux/reducers";
 import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class AllCases extends Component {
   constructor() {
@@ -85,7 +85,9 @@ class AllCases extends Component {
                       <strong>Email: </strong>
                       {singleCase.email}
                     </span>
-                    <button className="viewCase">View Case</button>
+                    <button className="viewCase">
+                      <Link to={`/cases/${singleCase.caseId}`}>View Case</Link>
+                    </button>
                     <button className="deleteCase">Delete Case</button>
                   </div>
                 </div>

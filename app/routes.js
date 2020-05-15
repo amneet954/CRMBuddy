@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { HomePage, NavBar, AllCases, NewCaseForm } from "./Components";
+import {
+  HomePage,
+  NavBar,
+  AllCases,
+  NewCaseForm,
+  SingleCase,
+} from "./Components";
 
 class Routes extends Component {
   render() {
@@ -13,6 +19,7 @@ class Routes extends Component {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/cases" component={AllCases} />
+              <Route exact path="/cases/:id" component={SingleCase} />
               <Route exact path="/caseForm" component={NewCaseForm} />
               <Route
                 exact
