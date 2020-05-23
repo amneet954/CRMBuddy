@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import { gettingCases } from "../redux/reducers";
 import { findingCase } from "../redux/reducers";
 import { connect } from "react-redux";
-import e from "express";
 // import { Link } from "react-router-dom";
 
 class SingleCase extends Component {
@@ -18,7 +17,7 @@ class SingleCase extends Component {
     let singleCase = this.props.singleCase.viewCase;
     console.log(singleCase);
     console.log("This is : " + singleCase.subject);
-    if (!singleCase.subject) {
+    if (singleCase === {}) {
       return (
         <div>
           <h1>Hi from SingleCase!</h1>
