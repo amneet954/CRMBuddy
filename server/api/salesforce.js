@@ -23,6 +23,53 @@ router.get("/", (req, res, next) => {
   }
 });
 
+router.get("/:email/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    connection.login(username, password, async (err, ret) => {
+      if (err) console.log(err);
+      await connection
+        .sobject("Case")
+        .findOne(
+          { Id: id },
+          [
+            "Subject",
+            "Id",
+            "SuppliedCompany",
+            "SuppliedName",
+            "SuppliedEmail",
+            "IsClosed",
+            "IsDeleted",
+          ],
+          (err, ret) => {
+            if (err) res.json(err);
+            else {
+              let name = ret.SuppliedName;
+              let email = ret.SuppliedEmail;
+              let company = ret.SuppliedCompany;
+              let subject = ret.Subject;
+              let caseId = ret.Id;
+              let IsClosed = ret.IsClosed;
+              let IsDeleted = ret.IsDeleted;
+              let obj = {
+                caseId,
+                subject,
+                name,
+                email,
+                company,
+                IsClosed,
+                IsDeleted,
+              };
+              res.json(obj);
+            }
+          }
+        );
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 router.get("/:email", async (req, res, next) => {
   try {
     const email = req.params.email;
@@ -87,6 +134,8 @@ router.get("/:email/:company", async (req, res, next) => {
     next(error);
   }
 });
+
+//CREATE ROUTER.GET FOR GETTING SINGLE CASE BASED ON CASEID
 
 router.post("/caseForm", async (req, res, next) => {
   try {

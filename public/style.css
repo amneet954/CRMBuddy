@@ -133,11 +133,17 @@ nav {
   width: 150px;
   transition-duration: 0.4s;
   outline: none;
+  text-decoration: none;
 }
 .viewCase:hover {
   background-color: rgb(57, 60, 209);
   border-color: rgb(57, 60, 209);
   outline: none;
+  text-decoration: none;
+}
+.viewButtonText {
+  text-align: center;
+  color: white;
 }
 .deleteCase {
   margin-left: 2%;
@@ -152,12 +158,15 @@ nav {
   width: 150px;
   outline: none;
   transition-duration: 0.4s;
+  text-decoration: none;
 }
 .deleteCase:hover {
   background-color: rgb(231, 23, 23);
   border-color: rgb(231, 23, 23);
   outline: none;
+  text-decoration: none;
 }
-/* .caseField {
-  padding: 3%;
-} */
+.deleteButtonText {
+  text-align: center;
+  color: white;
+}

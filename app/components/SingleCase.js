@@ -29,22 +29,29 @@ class SingleCase extends Component {
   }
 
   render() {
-    const singleCase = this.props.caseList.caseList;
-    if (!singleCase) {
-      return (
-        <div>
-          <h1>Hi from SingleCase!</h1>
+    // const singleCase = this.props.caseList.caseList;
+    // if (!singleCase) {
+    //   return (
+    //     <div>
+    //       <h1>Hi from SingleCase!</h1>
+    //     </div>
+    //   );
+    // } else {
+    //   return (
+    //     <div>
+    //       <div key={"case"} className="gridContainer">
+    //         <div className="caseCard">TEST FROM SINGLE CASE</div>
+    //       </div>
+    //     </div>
+    //   );
+    // }
+    return (
+      <div>
+        <div key={"case"} className="gridContainer">
+          <div className="caseCard">TEST FROM SINGLE CASE</div>
         </div>
-      );
-    } else {
-      return (
-        <div>
-          <div key={"case"} className="gridContainer">
-            <div className="caseCard">TEST FROM SINGLE CASE</div>
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

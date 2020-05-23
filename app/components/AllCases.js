@@ -86,7 +86,12 @@ class AllCases extends Component {
                       {singleCase.email}
                     </span>
                     <button className="viewCase">
-                      <Link to={`/cases/${singleCase.caseId}`}>View Case</Link>
+                      <Link
+                        to={`/cases/${singleCase.email}/${singleCase.caseId}`}
+                        className="viewButtonText"
+                      >
+                        View Case
+                      </Link>
                     </button>
                     <button className="deleteCase">Delete Case</button>
                   </div>

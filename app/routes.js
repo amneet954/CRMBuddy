@@ -19,7 +19,7 @@ class Routes extends Component {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/cases" component={AllCases} />
-              <Route exact path="/cases/:id" component={SingleCase} />
+              <Route exact path="/cases/:email/:id" component={SingleCase} />
               <Route exact path="/caseForm" component={NewCaseForm} />
               <Route
                 exact
