@@ -173,9 +173,9 @@ nav {
 .singleCaseCard {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   box-shadow: 0 4px 8px 0 rgb(26, 70, 214);
-  padding: 4%;
-  margin-right: 33%;
-  margin-left: 33%;
+  padding: 1.5%;
+  margin-right: 38%;
+  margin-left: 38%;
   text-align: center;
   justify-content: center;
   background-color: rgb(21, 21, 24);
