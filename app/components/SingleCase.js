@@ -2,19 +2,31 @@ import React, { Component } from "react";
 import { findingCase } from "../redux/reducers";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
+// let history = useHistory();
 class SingleCase extends Component {
   constructor() {
     super();
+    this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
     const caseId = this.props.match.params.id;
     this.props.dispatchCase(caseId);
+    this.setState({
+      id: this.props.singleCase.viewCase.caseId,
+    });
+  }
+
+  async handleDelete() {
+    let id = this.props.singleCase.viewCase.caseId;
+    event.preventDefault();
+    await axios.delete(`/api/cases/:email/${id}`);
+    <Link to={`/cases`}></Link>;
   }
 
   render() {
     let singleCase = this.props.singleCase.viewCase;
-    console.log(singleCase);
     if (singleCase === {}) {
       return (
         <div>
@@ -45,7 +57,9 @@ class SingleCase extends Component {
                     Find More Cases
                   </Link>
                 </button>
-                <button className="deleteCase">Delete Case</button>
+                <button className="deleteCase" onClick={this.handleDelete}>
+                  Delete Case
+                </button>
               </span>
             </div>
           </div>

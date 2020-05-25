@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { gettingCases } from "../redux/reducers";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 class AllCases extends Component {
   constructor() {
     super();
@@ -93,7 +93,16 @@ class AllCases extends Component {
                         View Case
                       </Link>
                     </button>
-                    <button className="deleteCase">Delete Case</button>
+                    <button
+                      className="deleteCase"
+                      onClick={async () => {
+                        let id = singleCase.caseId;
+                        event.preventDefault();
+                        await axios.delete(`/api/cases/:email/${id}`);
+                      }}
+                    >
+                      Delete Case
+                    </button>
                   </div>
                 </div>
               );

@@ -6,12 +6,14 @@ const GOT_DOMAIN = "GOT_DOMAIN";
 const GOT_CASES = "GOT_CASES";
 const CREATE_CASE = "CREATE_CASE";
 const VIEW_CASE = "VIEW_CASE";
+const DELETE_CASE = "DELETE_CASE";
 
 //  ACTION CREATORS
 const getDomain = (domain) => ({ type: GOT_DOMAIN, domain });
 const getCases = (email) => ({ type: GOT_CASES, email });
 const creatingCase = (newCase) => ({ type: CREATE_CASE, newCase });
 const viewingCase = (singleCase) => ({ type: VIEW_CASE, singleCase });
+const deletingCase = (deleteCase) => ({ type: DELETE_CASE, deleteCase });
 
 // THUNKS
 

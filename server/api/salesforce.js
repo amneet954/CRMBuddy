@@ -5,9 +5,9 @@ let connection = new jsforce.Connection({
 });
 const { username, password } = require("../../secrets");
 
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    connection.login(username, password, async (err, ret) => {
+    await connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       let shortUrl = ret.url.slice(0, ret.url.indexOf("/id"));
       let begin = shortUrl.lastIndexOf("/") + 1;
@@ -26,7 +26,7 @@ router.get("/", (req, res, next) => {
 router.get("/:email/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
-    connection.login(username, password, async (err, ret) => {
+    await connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       await connection
         .sobject("Case")
@@ -73,7 +73,7 @@ router.get("/:email/:id", async (req, res, next) => {
 router.get("/:email", async (req, res, next) => {
   try {
     const email = req.params.email;
-    connection.login(username, password, async (err, ret) => {
+    await connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       await connection.sobject("Case").find(
         {
@@ -108,7 +108,7 @@ router.get("/:email/:company", async (req, res, next) => {
   try {
     const email = req.params.email;
     const company = req.params.company;
-    connection.login(username, password, async (err, ret) => {
+    await connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       await connection.sobject("Case").findOne(
         {
@@ -140,7 +140,7 @@ router.get("/:email/:company", async (req, res, next) => {
 router.post("/caseForm", async (req, res, next) => {
   try {
     let { name, email, company, subject } = req.body;
-    connection.login(username, password, async (err, ret) => {
+    await connection.login(username, password, async (err, ret) => {
       if (err) console.log(err);
       connection.sobject("Case").create(
         {
@@ -158,6 +158,21 @@ router.post("/caseForm", async (req, res, next) => {
     });
   } catch (err) {
     next(err);
+  }
+});
+
+router.delete("/:email/:id", async (req, res, next) => {
+  try {
+    let id = req.params.id;
+    await connection.login(username, password, async (err, ret) => {
+      if (err) console.log(err);
+      await connection.sobject("Case").delete(id, (err, ret) => {
+        if (err) console.log(err);
+        else console.log("this is ret: ", ret);
+      });
+    });
+  } catch (err) {
+    console.log(err);
   }
 });
 
