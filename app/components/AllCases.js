@@ -73,18 +73,26 @@ class AllCases extends Component {
                 return (
                   <div key={"case"}>
                     <div className="caseCard">
+                      <span className="caseSubject miniCard">
+                        {singleCase.subject}
+                      </span>
+                      <br></br>
+                      <br></br>
                       <span className="caseName miniCard">
-                        <strong>Name: </strong>
-                        {singleCase.name}
+                        Name: {singleCase.name}
                       </span>
+                      <br></br>
+                      <br></br>
                       <span className="caseCompany miniCard">
-                        <strong>Company: </strong>
-                        {singleCase.company}
+                        Company: {singleCase.company}
                       </span>
+                      <br></br>
+                      <br></br>
                       <span className="caseEmail miniCard">
-                        <strong>Email: </strong>
-                        {singleCase.email}
+                        Email: {singleCase.email}
                       </span>
+                      <br></br>
+                      <br></br>
                       <button className="viewCase">
                         <Link
                           to={`/cases/${singleCase.email}/${singleCase.caseId}`}
@@ -93,6 +101,8 @@ class AllCases extends Component {
                           View Case
                         </Link>
                       </button>
+                      <br></br>
+                      <br></br>
                       <button
                         className="deleteCase"
                         onClick={async () => {

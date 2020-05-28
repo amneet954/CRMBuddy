@@ -8,6 +8,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 100px;
 }
 body {
   padding: 0;
@@ -70,23 +71,26 @@ nav {
   column-gap: 40px;
 }
 .caseName {
-  font-size: 100%;
+  font-size: 75%;
 }
 .caseCompany {
-  font-size: 100%;
+  font-size: 75%;
 }
 .caseEmail {
-  font-size: 100%;
+  font-size: 75%;
+}
+.caseSubject {
+  font-size: 125%;
+  font-weight: bold;
 }
 .caseCard {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
   box-shadow: 0 4px 8px 0 rgb(26, 70, 214);
-  padding: 5%;
-  width: 100%;
+  width: 400px;
   text-align: center;
-  background-color: rgb(21, 21, 24);
+  /* background-color: rgb(21, 21, 24); */
   border-radius: 5px 5px;
-  color: white;
+  padding: 25px;
 }
 .miniCard {
   border-radius: 5px 5px;
@@ -183,7 +187,7 @@ nav {
   color: white;
 }
 .grid-1 {
-  justify-content: center;
+  /* justify-content: center; */
   display: grid;
   grid-template-columns: 250px 250px 250px;
   grid-template-rows: auto auto auto;
@@ -192,7 +196,6 @@ nav {
 }
 .grid-1 div {
   font-size: 20px;
-  padding: 50px;
 }
 .item-1 {
   background: #b03532;

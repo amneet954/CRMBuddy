@@ -88,10 +88,19 @@ router.get("/:email", async (req, res, next) => {
               let name = current.SuppliedName;
               let email = current.SuppliedEmail;
               let company = current.SuppliedCompany;
+              let subject = current.Subject;
               let caseId = current.Id;
               let IsClosed = current.IsClosed;
               let IsDeleted = current.IsDeleted;
-              let obj = { caseId, name, company, email, IsClosed, IsDeleted };
+              let obj = {
+                caseId,
+                name,
+                company,
+                subject,
+                email,
+                IsClosed,
+                IsDeleted,
+              };
               arr.push(obj);
             }
             res.json(arr);
@@ -122,9 +131,18 @@ router.get("/:email/:company", async (req, res, next) => {
             let email = ret.SuppliedEmail;
             let company = ret.SuppliedCompany;
             let caseId = ret.Id;
+            let subject = ret.Subject;
             let IsClosed = ret.IsClosed;
             let IsDeleted = ret.IsDeleted;
-            let obj = { caseId, name, company, email, IsClosed, IsDeleted };
+            let obj = {
+              caseId,
+              name,
+              company,
+              subject,
+              email,
+              IsClosed,
+              IsDeleted,
+            };
             res.json(obj);
           }
         }
