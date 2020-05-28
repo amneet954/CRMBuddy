@@ -67,53 +67,50 @@ class AllCases extends Component {
               </div>
             </div>
           </form>
-
-          {caseList.length ? (
-            caseList.map((singleCase) => {
-              return (
-                <div key={"case"} className="gridContainer">
-                  <div className="caseCard">
-                    <span className="caseName miniCard">
-                      <strong>Name: </strong>
-                      {singleCase.name}
-                    </span>
-                    <span className="caseCompany miniCard">
-                      <strong>Company: </strong>
-                      {singleCase.company}
-                    </span>
-                    <span className="caseEmail miniCard">
-                      <strong>Email: </strong>
-                      {singleCase.email}
-                    </span>
-                    <button className="viewCase">
-                      <Link
-                        to={`/cases/${singleCase.email}/${singleCase.caseId}`}
-                        className="viewButtonText"
+          <div className="grid-1">
+            {caseList.length ? (
+              caseList.map((singleCase) => {
+                return (
+                  <div key={"case"}>
+                    <div className="caseCard">
+                      <span className="caseName miniCard">
+                        <strong>Name: </strong>
+                        {singleCase.name}
+                      </span>
+                      <span className="caseCompany miniCard">
+                        <strong>Company: </strong>
+                        {singleCase.company}
+                      </span>
+                      <span className="caseEmail miniCard">
+                        <strong>Email: </strong>
+                        {singleCase.email}
+                      </span>
+                      <button className="viewCase">
+                        <Link
+                          to={`/cases/${singleCase.email}/${singleCase.caseId}`}
+                          className="viewButtonText"
+                        >
+                          View Case
+                        </Link>
+                      </button>
+                      <button
+                        className="deleteCase"
+                        onClick={async () => {
+                          let id = singleCase.caseId;
+                          event.preventDefault();
+                          await axios.delete(`/api/cases/:email/${id}`);
+                        }}
                       >
-                        View Case
-                      </Link>
-                    </button>
-                    <button
-                      className="deleteCase"
-                      onClick={async () => {
-                        let id = singleCase.caseId;
-                        event.preventDefault();
-                        await axios.delete(`/api/cases/:email/${id}`);
-                      }}
-                    >
-                      Delete Case
-                    </button>
+                        Delete Case
+                      </button>
+                    </div>
                   </div>
-                </div>
-              );
-            })
-          ) : (
-            <div className="cardContainer">
-              <div className="card">
-                <h1>No List Yet</h1>
-              </div>
-            </div>
-          )}
+                );
+              })
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
       );
     }
