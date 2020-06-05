@@ -8,11 +8,11 @@ class AllCases extends Component {
     super();
     this.state = {
       email: "",
+      view: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
@@ -103,16 +103,6 @@ class AllCases extends Component {
                       </button>
                       <br></br>
                       <br></br>
-                      <button
-                        className="deleteCase"
-                        onClick={async () => {
-                          let id = singleCase.caseId;
-                          event.preventDefault();
-                          await axios.delete(`/api/cases/:email/${id}`);
-                        }}
-                      >
-                        Delete Case
-                      </button>
                     </div>
                   </div>
                 );

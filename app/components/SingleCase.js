@@ -4,10 +4,12 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-// let history = useHistory();
 class SingleCase extends Component {
   constructor() {
     super();
+    this.state = {
+      redirect: false,
+    };
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
@@ -19,10 +21,14 @@ class SingleCase extends Component {
   }
 
   async handleDelete() {
-    let id = this.props.singleCase.viewCase.caseId;
-    event.preventDefault();
-    await axios.delete(`/api/cases/:email/${id}`);
-    <Link to={`/cases`}></Link>;
+    this.state.redirect = true;
+    if (this.state.redirect === true) {
+      let id = this.props.singleCase.viewCase.caseId;
+      this.props.history.push(`/`);
+      alert("Case has been sucessfully deleted!");
+      window.location.reload(true);
+      await axios.delete(`/api/cases/:email/${id}`);
+    }
   }
 
   render() {
